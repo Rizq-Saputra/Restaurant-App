@@ -22,8 +22,6 @@
   }
 
   // Header
-
-
   header {
     background-color: $secondary-color;
     color: #fff;
@@ -50,6 +48,7 @@
     .menu-toggle {
       display: none;
       font-size: 1.5em;
+      cursor: pointer;
     }
    
     /* Navigation Bar */
@@ -82,10 +81,6 @@
       }
     }
      
-    .menu-toggle {
-      cursor: pointer;
-      display: none;
-    }
 
     .navbar-menu li a:hover{
       background-color: #FF5001;
@@ -279,7 +274,6 @@
             color: yellow;
             margin-right: 5px;
             font-size: 20px;
-            animation: starAnimation 0.5s infinite alternate; // Animasi bintang
           }
         }
       }

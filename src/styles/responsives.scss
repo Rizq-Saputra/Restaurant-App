@@ -11,9 +11,13 @@ $accent-color: #FF6347;
     }
     .menu-toggle {
         display: flex !important;
-        cursor: pointer !important;
+        cursor: pointer;
         padding: 1rem;
-        transition: all 0.3s; 
+        transition: all 0.3s;         
+        background-color: transparent;
+        color: white;
+        border: none;
+
     }
     .search-form input {
         width: 450px !important;
@@ -39,7 +43,6 @@ $accent-color: #FF6347;
         .nav-item {
             width: 100%;
             line-height: 24px;
-            // text-align: center;
             text-align: right;
             border-bottom: 1px solid #e0e0e0;
             padding: 20px;

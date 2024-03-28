@@ -7,15 +7,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const navbarMenu = document.querySelector('.navbar-menu');
 
     let restaurantsData; // Menyimpan data restoran di luar event listener
-  
+
+    // Event listener untuk toggle menu
     menuBtn.addEventListener('click', function() {
       navbarMenu.classList.toggle('active');
       if (navbarMenu.classList.contains('active')) {
         menuBtn.innerHTML = '<i class="fa-solid close fa-xmark"></i>';
+        menuBtn.setAttribute('aria-label', 'close menu');
         menuBtn.style.zIndex = '1000';
         main.style.opacity = '0.5'; 
       } else {
         menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        menuBtn.setAttribute('aria-label', 'toggle menu');
         main.style.opacity = '1'; 
       }
     });
