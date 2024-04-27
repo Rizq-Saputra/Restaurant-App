@@ -2,38 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff6347" />
+    <meta name="description" content="Website Restaurant Apps"/>
     <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://kit.fontawesome.com/768e7b3923.js"crossorigin="anonymous"></script>
     <!-- Favicons -->
-    <link rel="icon" href="favicon.ico" sizes="48x48" />
+    <link rel="icon" href="favicon.png" sizes="48x48" />
+    <link rel="manifest" href="./app.webmanifest" />
+    <title>Restaurant</title>
   </head>
-  <body>
 
-      <!-- Navigation Bar -->
-    <header id="header"> 
+  <body>
+    <header id="header">
+      <a href="#maincontent" class="skip-link" tabindex="0">Skip To Content</a>
       <div class="brand">
-        <a href="#" class="logo">Hunger</a>
+        <a href="#" class="logo" aria-label="Logo Restaurant">
+          <picture>
+            <source type="image/webp" srcset="logo.webp">
+            <source type="image/jpeg" srcset="logo.png">
+            <img src="logo.png" alt="">
+          </picture>
+        </a>
       </div>
-      <nav class="navbar">     
+      <!-- Navigation Bar -->
+      <nav id="navigationDrawer" class="navbar">
         <ul class="navbar-menu">
-          <li class="nav-item"><a href="#"><span class="nav-text">Home</span><i class="nav-icon fa-solid fa-house"></i></a></li>
-          <li class="nav-item"><a href="#"><span class="nav-text">Favorite</span><i class="nav-icon fa-solid fa-star"></i></a></li>
-          <li class="nav-item"><a href="https://github.com/Rizq-Saputra"><span class="nav-text">About Us</span><i class="nav-icon fa-solid fa-users"></i></a></li>
+          <li class="nav-item">
+            <a href="#/home"
+              ><span class="nav-text">Home</span
+              ><i class="nav-icon fa-solid fa-house"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a href="#/favorite"
+              ><span class="nav-text">Favorite</span
+              ><i class="nav-icon fa-solid fa-star"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/Rizq-Saputra"
+              ><span class="nav-text">About Us</span
+              ><i class="nav-icon fa-solid fa-users"></i
+            ></a>
+          </li>
         </ul>
-        <button aria-label="Toggle Menu" id="menu" class="menu-toggle" tabindex="0"><i class="fa-solid fa-bars"></i></button>
+        <button
+          aria-label="Toggle Menu"
+          id="hamburgerButton"
+          class="menu-toggle"
+          tabindex="0"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </nav>
     </header>
 
-    <main id="main">
-      
+    <main id="maincontent" tabindex="0" class="main">
       <!-- Hero Element -->
       <div class="hero">
+        <picture>
+          <source media="(max-width: 400px)" srcset="../images/heros/hero-image_2-small.webp" type="image/webp"/>
+          <source media="(max-width: 400px)" srcset="../images/heros/hero-image_2-small.jpg" type="image/jpeg"/>
+          <img src="../images/heros/hero-image_2-large.webp" alt="Hero Image" class="hero-image"/>
+        </picture>
         <div class="hero-inner">
           <h1 class="hero-title" tabindex="0">Enjoy Your Delicious Food</h1>
           <p class="hero-tagline" tabindex="0">
-            Discover the joy of savoring the finest cuisine at our restaurant, where every bite is a journey to happiness. Indulge in the exquisite flavors and let your taste buds dance with delight.
+            Discover the joy of savoring the finest cuisine at our restaurant,
+            where every bite is a journey to happiness. Indulge in the exquisite
+            flavors and let your taste buds dance with delight.
           </p>
           <button class="hero-button">Learn More</button>
         </div>
@@ -46,15 +86,21 @@
       <!-- Form Pencarian -->
       <section class="search-container">
         <form class="search-form">
-          <input type="text" id="search-input" placeholder="Search Restaurant...">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="text-search"> Search</span></button>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search Restaurant..."
+          />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i
+            ><span class="text-search"> Search</span>
+          </button>
         </form>
       </section>
 
       <!-- Daftar Restoran -->
-      <section class="container-restaurants">
-        <div class="restaurant-list">
-        </div>
+      <section id="maincontent" class="container-restaurants">
+        <div class="restaurant-list" id="restaurant-list"></div>
       </section>
     </main>
 
@@ -62,6 +108,5 @@
     <footer id="footer">
       <p tabindex="0">Copyright © 2024 - Hunger Apps</p>
     </footer>
-
   </body>
 </html>

@@ -1,63 +1,81 @@
 // Reset CSS
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  // Variabel
-  $primary-color: #FF5001;
-  $secondary-color: #333;
-  $accent-color: #FF6347;
-  
-  // Fonts
-  $font-family: 'Poppins', Arial, sans-serif;
-  
-  *[tabindex="0"]:focus {
-    outline: 4px dashed orange;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body{
-    font-family: $font-family;
-  }
+// Variabel
+$primary-color: #A32B00;
+$secondary-color: #333;
+$accent-color: #ff6347;
 
-  // Header
-  header {
-    background-color: $secondary-color;
-    color: #fff;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+// Fonts
+$font-family: "Poppins", Arial, sans-serif;
+
+*[tabindex="0"]:focus {
+  outline: 4px dashed orange;
+}
+
+body {
+  font-family: $font-family;
+  img {
     width: 100%;
+    height: auto;
+  }
+}
+
+// Header
+header {
+  background-color: $secondary-color;
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  .skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
     top: 0;
-    z-index: 1000;
+  }
 
-    .brand {
-      font-size: 1.5rem;
-      
-      a {
-        color: #fff;
-        text-decoration: none;
-        padding: 1em;
+  .brand {
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.9em;
+
+      img {
+        width: 20%;
       }
-      
     }
+  }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-   
-    /* Navigation Bar */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* Navigation Bar */
   .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    
     .navbar-menu {
       list-style-type: none;
       display: flex;
@@ -68,223 +86,550 @@
         a {
           text-decoration: none;
           padding: 1em;
-          
-          .nav-icon{
+          white-space: nowrap;
+
+          .nav-icon {
             display: none;
           }
 
-          span{
+          span {
             color: #fff;
           }
         }
-        
       }
     }
-     
 
-    .navbar-menu li a:hover{
-      background-color: #FF5001;
-    }
-  }
-
-  }
-  
-  
-  // Hero Element
-  .hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 500px;
-    width: 100%;
-    background-image: url('../public/images/heros/hero-image_2.jpg');
-    background-position: center;
-    background-size: cover;
-    padding: 0 20px;
-  
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-  
-    .hero-inner {
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 70px 70px 70px 120px;
-      max-width: 800px;
-      padding-top: 70px;
-  
-      .hero-title {
-        color: #fff;
-        font-weight: 500;
-        font-size: 40px;
-      }
-      .hero-tagline {
-        color: #fff;
-        margin-top: 16px;
-        font-size: 18px;
-        font-weight: 300;
-        width: 70%;
-      }
-
-      .hero-button {
-        background-color: $primary-color;
-        color: #fff;
-        border: none;
-        padding: 0.9em;
-        margin-top: 20px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 25%;
-        border-radius: 5px;
-
-        &:hover {
-          background-color: $accent-color;
-        }
-      }
-    }
-  }
-  
-  // Content Heading
-  .head-content {
-    text-align: center;
-    margin-top: 38px;
-  
-    h1 {
-      font-size: 2rem;
-      color: $secondary-color;
-      margin-bottom: 10px;
-    }
-  
-    &::after {
-      content: '';
-      display: block;
-      width: 90px;
-      height: 2px;
+    .navbar-menu li a:hover {
       background-color: $primary-color;
-      margin: 10px auto;
     }
   }
-  
-  // CSS untuk Form Pencarian
-  .search-container {
-    margin-top: 20px;
+}
+
+// Hero Element
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  width: 100%;
+  background-color: black;
+  padding: 0 20px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-inner {
+    z-index: 10;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-  
-    .search-form {
-      display: inline-block;
-  
-      input {
-        width: 600px;
-        padding: 1em;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+    margin: 70px 70px 70px 120px;
+    max-width: 800px;
+    padding-top: 70px;
+
+    .hero-title {
+      color: #fff;
+      font-weight: 500;
+      font-size: 40px;
+    }
+    .hero-tagline {
+      color: #fff;
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 300;
+      width: 70%;
+    }
+
+    .hero-button {
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      padding: 0.9em;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 25%;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $accent-color;
       }
-  
-      button {
-        padding: 1em;
-        font-size: 16px;
+    }
+  }
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+
+// Content Heading
+.head-content {
+  text-align: center;
+  margin-top: 38px;
+
+  h1 {
+    font-size: 2rem;
+    color: $secondary-color;
+    margin-bottom: 10px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: $primary-color;
+    margin: 10px auto;
+  }
+}
+
+// CSS untuk Form Pencarian
+.search-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search-form {
+    display: inline-block;
+
+    input {
+      width: 600px;
+      padding: 1em;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 1em;
+      font-size: 16px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-color;
+      }
+    }
+  }
+}
+
+// Daftar Restoran
+.container-restaurants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 40px;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    input {
+      flex: 1;
+      width: 600px;
+      padding: 1em;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 1em;
+      font-size: 16px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-color;
+      }
+    }
+  }
+  .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-content: space-evenly;
+
+    .restaurant-item {
+      max-width: 350px;
+      border: 1px solid #ddd;
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        max-height: 150px;
+        display: block;
+      }
+
+      .city-label {
+        position: absolute;
+        top: 25px;
         background-color: $primary-color;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: $accent-color;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 0px 5px 5px 0px;
+
+        p {
+          font-weight: bold;
         }
       }
-    }
-  }
-  
-  // Daftar Restoran
-  .container-restaurants {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    padding: 40px;
-  
-    .restaurant-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      justify-content: space-evenly;
-  
-      .restaurant-item {
-        max-width: 350px;
-        border: 1px solid #ddd;
-        position: relative;
-        border-radius: 5px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  
-        img {
-          width: 100%;
-          max-height: 170px;
-          display: block;
-        }
-  
-        .city-label {
-          position: absolute;
-          top: 25px;
-          background-color: $primary-color;
-          color: white;
-          padding: 5px 10px;
-          border-radius: 0px 5px 5px 0px;
-  
-          p {
-            font-weight: bold;
-          }
-        }
-  
-        .content-item {
-          margin-top: 10px;
-          padding: 20px;
-  
-          h2 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-          }
-  
-          p {
-            font-size: 0.9em;
-            margin-bottom: 5px;
-          }
-        }
-  
-        .rating {
-          margin-top: 10px;
+
+      .content-item {
+        margin-top: 10px;
+        padding: 20px;
+
+        h2 {
+          font-size: 1.2em;
           margin-bottom: 5px;
-          display: flex;
-          align-items: center;
+        }
+
+        p {
           font-size: 1em;
-  
-          i {
-            color: yellow;
-            margin-right: 5px;
-            font-size: 20px;
+          margin-bottom: 5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary-color;
+          padding: 0.7em 0px;
+        }
+      }
+
+      .rating {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+
+        i {
+          color: yellow;
+          margin-right: 5px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Detail Restaurant
+.restaurant-detail {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .restaurant-detail__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .restaurant-detail__image {
+    width: 50%;
+    border-radius: 8px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .restaurant-detail__info {
+    flex: 1;
+  }
+
+  .restaurant-detail__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .restaurant-detail__location,
+  .restaurant-detail__rating,
+  .restaurant-detail__description {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .restaurant-detail__rating {
+    color: #ffc107;
+  }
+
+  .restaurant-detail__content {
+    display: flex;
+    gap: 20px;
+  }
+
+  .restaurant-detail__menus {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    .food__menu,
+    .drink__menu {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .menu-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-bottom: 10px;
+      flex: 1;
+      min-width: 150px;
+
+      .menu-card__name {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .restaurant-detail__menus,
+  .restaurant-detail__reviews {
+    flex: 1;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .restaurant-review {
+    margin: 20px 0px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: $secondary-color;
+      text-align: center;
+      position: relative;
+    }
+
+    .form-review {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0px 10%;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        padding: 1em;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        font-family: $font-family;
+      }
+
+      .form-review__submit {
+        display: flex;
+        justify-content: center;
+
+        button {
+          padding: 12px 20px;
+          font-size: 1.5em;
+          background-color: $primary-color;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $accent-color;
           }
         }
       }
     }
   }
-  
-  // Footer
-  footer {
-    background-color: $secondary-color;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+
+  .restaurant-detail__reviews {
+    margin-top: 20px;
+
+    .reviews-list {
+      padding: 0;
+    }
+
+    .review-item {
+      list-style-type: none;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .review-name {
+        font-weight: bold;
+      }
+
+      .review-date {
+        color: #888;
+      }
+
+      .review-text {
+        color: $secondary-color;
+      }
+    }
   }
-  
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: $secondary-color;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: $accent-color;
+      position: absolute;
+      bottom: -5px;
+      left: calc(50% - 25px);
+    }
+  }
+
+  ul {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 15px;
+
+    li {
+      color: #555;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .restaurant-detail__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .restaurant-detail__image {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .restaurant-detail__menus,
+    .restaurant-detail__reviews {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.restaurant-item .skeleton-image {
+  width: 100%;
+  height: 170px;
+  background-color: #ddd;
+}
+
+.restaurant-item .skeleton-image img {
+  display: none;
+}
+
+.restaurant-item.loaded .skeleton-image {
+  display: none;
+}
+
+.restaurant-item.loaded .skeleton-image img {
+  display: block;
+}
+
+// Favorite Restaurant
+.favorite {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+// Backbutton
+.back-button {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// Footer
+footer {
+  background-color: $secondary-color;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
