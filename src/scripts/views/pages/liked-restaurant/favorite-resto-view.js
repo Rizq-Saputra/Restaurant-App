@@ -21,7 +21,7 @@ class FavoriteRestaurantView {
         <div id="restaurant-search-container">
           <div class="search-bar">
             <input id="query" type="text" placeholder="Search...">
-            <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i><span class="text-search"> Search</span></button>
+            <button aria-label="Search Favorite restaurant" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i><span class="text-search"> Search</span></button>
           </div>
           <div class="text-error" id="textError"></div>
           <div class="restaurant-list" id="restaurant-list"></div>

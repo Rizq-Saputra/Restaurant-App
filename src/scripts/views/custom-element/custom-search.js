@@ -83,11 +83,7 @@ class CustomSearch extends HTMLElement {
         </style>
   
         <form class="search-form" id="search-form">
-        <input
-          type="text"
-          id="query"
-          placeholder="Search Restaurant..."
-        />
+        <input type="text" id="query" placeholder="Search Restaurant..."/>
         <button aria-label="Search restaurant" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
           <span class="text-search"> Search</span>
