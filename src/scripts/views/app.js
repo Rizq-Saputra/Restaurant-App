@@ -17,7 +17,6 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
-
   }
 
   async renderPage() {
